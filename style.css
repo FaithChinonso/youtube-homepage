@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 10px;
+    background-color: #ffffff;
+    color: #444444;
+}
+a {
+    text-decoration: none;
+    color: #444444;
+    line-break: 1.875rem;
+}
+img {
+    display: block;
+    width: 100%;
+}
+.youtube-logo {
+    width: 9rem;
+    height: 3rem;
+}
+.top-nav-responsive {
+    display: none;
+}
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 7rem;
+    width: 100%;
+}
+@media (min-width:700px) {
+    html {
+        font-size: 16px;
+    }
+    header {
+        position: fixed;
+    }
+    .top-nav {
+        display: none;
+    }
+    .top-nav-responsive {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 2rem;
+    }
+    .top-nav-logo-container {
+        margin-left: 1.5rem;
+    }
+    .nav-toggle {
+        display: none;
+        cursor: pointer;
+    }
+    .nav-toggle-label {
+        position: absolute;
+        top: 1.5rem;
+        left: 2rem;
+    }
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        height: 0.1rem;
+        background-color: #444444;
+        width: 1rem;
+        position: relative;
+    }
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+        
+    }       
+    .nav-toggle-label span::before {
+        bottom: 0.3rem;
+    }
+    .nav-toggle-label span::after{
+        top: 0.3rem;
+    }
+    .nav-over {
+        display: none;
+        position: absolute;
+    }
+    .hamburger {
+        display: none;
+        cursor: pointer;
+    }
+    .hamburger-label span,
+    .hamburger-label span::before,
+    .hamburger-label span::after {
+        display: block;
+        height: 0.1rem;
+        background-color: #444444;
+        width: 1rem;
+        position: relative;
+    }
+    .hamburger-label span::before,
+    .hamburger-label span::after {
+        content: '';
+        position: absolute;
+    }       
+    .hamburger-label span::before {
+        bottom: 0.3rem;
+    }
+    .hamburger-label span::after {
+        top: 0.3rem;
+    }  
+    .hamburger:checked ~.nav-over{
+        display: none;
+    }
+    .nav-over-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav-over-ul ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .nav-over-ul ul li {
+        list-style: none;
+        padding: 1rem;
+    }
+    .nav-over-ul ul li a {
+        
+    }
+    .nav-toggle:checked ~.nav-over {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: absolute;
+        text-align: left;
+        left: 0;
+        width: 15%;
+        height: auto;
+        background-color: beige;
+        opacity: 1;
+        z-index: 1;
+    }
+    .nav-over-items {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+    }
+    hr {
+        opacity: 0.3;
+    }
+    .second-nav {
+        width: 100%;
+        height: auto;
+        margin: 1rem 0 1rem 10rem;
+    }
+    .second-nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 2rem;
+        overflow-x: scroll;
+        margin: 1rem;
+    }
+    .second-nav ul::-webkit-scrollbar {
+        display: none;
+    }
+    .second-nav ul::-webkit-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    }
+    .second-nav ul li {
+        background: lightgrey;
+        border-radius: 4rem;
+        padding: 0.7rem 1rem;
+        list-style-type: none;
+        height: 3rem;
+    }
+    .second-nav ul li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        color: black;
+    }
+    input {
+        width: 30rem;
+        padding: .5rem .5rem;
+        margin: .5rem 0;
+        box-sizing: border-box;
+    }
+    button {
+        background-color: #EEEEEE;
+        padding: .5rem 1.5rem;
+        margin: .5rem -1rem;
+        box-sizing: border-box;
+
+    }
+    .side-nav-bar {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+        width: 10%;
+        top: 3rem;
+        left: 0;
+    }      
+    .side-nav-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+}
