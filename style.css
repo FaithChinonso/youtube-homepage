@@ -18,7 +18,6 @@ a {
 }
 img {
     display: block;
-    width: 100%;
 }
 .youtube-logo {
     width: 9rem;
@@ -30,16 +29,138 @@ img {
 .top-nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 7rem;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
-@media (min-width:700px) {
+.icon-class {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+.menu-channel {
+    border-radius: 50%;
+}
+.second-nav {
+    width: 100%;
+    height: auto;
+    margin: .5rem 0 .5rem;
+    top: 5rem;
+}
+.second-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2rem;
+    overflow-x: scroll;
+    margin: 1rem;
+}
+.second-nav ul::-webkit-scrollbar {
+    display: none;
+}
+.second-nav ul::-webkit-scrollbar {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+.second-nav ul li {
+    background-color: #E7E7E7;
+    border-radius: 4rem;
+    padding: 0.7rem 1rem;
+    list-style-type: none;
+    height: 2.5rem;
+}
+.second-nav ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    color: black;
+}
+.second-nav ul li:hover {
+    background-color: #DDD;
+}
+.side-nav-bar {
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    opacity: 1;
+    z-index: 333;
+}
+.channels-profile-img {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+}
+.video-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}  
+.thumbnail {
+    position: relative;
+    display: flex;
+}
+.thumbnail-img {
+    width: 100%;
+    height: 100%;
+    min-width: 15rem;
+    min-height: 10rem;
+    background-color: #AAA;
+}
+.thumbnail::before {
+    content: attr(data-duration);
+    position: absolute;
+    background-color: black;
+    opacity: 0.85;
+    right: .5rem;
+    bottom: .5rem;
+    padding: .1rem .3rem;
+    border-radius: .3rem;
+    font-size: 0.9rem;
+}
+.video-section {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    margin: 0 1.5rem;
+    border-top: 4px solid #CCC;
+    flex-wrap: wrap;
+} 
+.video-section:first-child {
+    border-top: none;
+}
+.channels {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+}
+main {
+    background-color: #f9f9f9;
+}
+@media (min-width:450px) {
+    html {
+        font-size: 12px;
+    }
+    
+}
+@media (min-width:800px) {
     html {
         font-size: 16px;
     }
     header {
         position: fixed;
+        z-index: 999;
+        background-color: #FFF;
+        opacity: 1;
     }
     .top-nav {
         display: none;
@@ -47,11 +168,24 @@ img {
     .top-nav-responsive {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100vw;
+    }
+    .menu-icons {
+        display: flex;
+        flex: row;
         justify-content: space-around;
-        gap: 2rem;
+        align-items: center;
+        margin-left: 2rem;
+        width: 30%;
+    }
+    .first {
+        margin-right: 3rem;
+        margin-left: 0;
     }
     .top-nav-logo-container {
-        margin-left: 1.5rem;
+        margin-left: 4rem;
     }
     .nav-toggle {
         display: none;
@@ -86,6 +220,7 @@ img {
     .nav-over {
         display: none;
         position: absolute;
+        z-index: 400000;
     }
     .hamburger {
         display: none;
@@ -111,7 +246,7 @@ img {
     .hamburger-label span::after {
         top: 0.3rem;
     }  
-    .hamburger:checked ~.nav-over{
+    .hamburger-label:checked .nav-over {
         display: none;
     }
     .nav-over-header {
@@ -130,21 +265,20 @@ img {
         list-style: none;
         padding: 1rem;
     }
-    .nav-over-ul ul li a {
-        
-    }
     .nav-toggle:checked ~.nav-over {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         position: absolute;
         text-align: left;
+        top: 6px;
         left: 0;
         width: 15%;
-        height: auto;
+        height: 100vh;
         background-color: beige;
         opacity: 1;
-        z-index: 1;
+        z-index: 400000;
+        overflow-y: auto;
     }
     .nav-over-items {
         display: flex;
@@ -158,59 +292,40 @@ img {
         opacity: 0.3;
     }
     .second-nav {
-        width: 100%;
-        height: auto;
         margin: 1rem 0 1rem 10rem;
     }
-    .second-nav ul {
+   
+    form {
+        width: 40%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        gap: 2rem;
-        overflow-x: scroll;
-        margin: 1rem;
-    }
-    .second-nav ul::-webkit-scrollbar {
-        display: none;
-    }
-    .second-nav ul::-webkit-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    }
-    .second-nav ul li {
-        background: lightgrey;
-        border-radius: 4rem;
-        padding: 0.7rem 1rem;
-        list-style-type: none;
-        height: 3rem;
-    }
-    .second-nav ul li a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: nowrap;
-        color: black;
+        border-radius: 5px;
+        margin-left: 3rem;
     }
     input {
         width: 30rem;
         padding: .5rem .5rem;
         margin: .5rem 0;
         box-sizing: border-box;
+        border: 1px solid #777;
+        border-right: none;
     }
-    button {
+    .search-btn {
         background-color: #EEEEEE;
         padding: .5rem 1.5rem;
         margin: .5rem -1rem;
         box-sizing: border-box;
-
+        border-left: none;
+        cursor: pointer;
+        border: 1px solid #777;
     }
     .side-nav-bar {
         position: absolute;
         display: flex;
         flex-direction: column;
-        justify-self: center;
-        align-items: center;
-        width: 10%;
+        justify-self: flex-start;
+        align-items:center;
+        width: 5%;
+        height: 50vh;
         top: 3rem;
         left: 0;
     }      
@@ -219,6 +334,25 @@ img {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 2rem;
+        margin-top: 1rem;
+        font-size: 0.8rem;
+    }
+    .middle-side {
+        display: none;
+    }
+    .video-container {
+        width: 23%;
+    }
+    .video-section {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem 1rem;
+        flex-wrap: wrap;
+        position: relative;
+        top: 10rem;
+        left: 6.5rem;
+        width: 85%;
+        height: auto;
+        padding: 1rem 0;
     }
 }
